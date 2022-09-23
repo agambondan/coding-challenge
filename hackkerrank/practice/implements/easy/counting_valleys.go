@@ -2,6 +2,15 @@ package main
 
 import "fmt"
 
+/*
+ * Complete the 'countingValleys' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER steps
+ *  2. STRING path
+ */
+
 //func countingValleys(steps int32, path string) int32 {
 //	// Write your code here
 //	var countValley, countDown, countUp int32

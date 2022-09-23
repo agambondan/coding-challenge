@@ -5,6 +5,9 @@ import (
 	"sort"
 )
 
+/*
+ * Complete the getMoneySpent function below.
+ */
 func getMoneySpent(keyboards []int32, drives []int32, b int32) int32 {
 	/*
 	 * Write your code here.

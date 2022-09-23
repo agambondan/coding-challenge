@@ -2,6 +2,13 @@ package main
 
 import "fmt"
 
+/*
+ * Complete the 'breakingRecords' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY scores as parameter.
+ */
+
 func breakingRecords(scores []int32) []int32 {
 	// Write your code here
 	var result = make([]int32, 2)

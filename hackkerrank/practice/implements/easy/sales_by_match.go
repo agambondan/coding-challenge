@@ -5,12 +5,21 @@ import (
 	"strconv"
 )
 
+/*
+ * Complete the 'sockMerchant' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts following parameters:
+ *  1. INTEGER n
+ *  2. INTEGER_ARRAY ar
+ */
+
 func sockMerchant(n int32, ar []int32) int32 {
 	// Write your code here
 	var result int32
 	var socks = make(map[string]int32)
 
-	for i := 0; i < len(ar); i++ {
+	for i := 0; i < int(n); i++ {
 		key := strconv.Itoa(int(ar[i]))
 		_, exist := socks[key]
 		if exist {

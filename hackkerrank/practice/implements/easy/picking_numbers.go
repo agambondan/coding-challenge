@@ -5,6 +5,13 @@ import (
 	"sort"
 )
 
+/*
+ * Complete the 'pickingNumbers' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY a as parameter.
+ */
+
 func pickingNumbers(a []int32) int32 {
 	// Write your code here
 	var frequency [101]int

@@ -2,6 +2,15 @@ package main
 
 import "fmt"
 
+/*
+ * Complete the 'bonAppetit' function below.
+ *
+ * The function accepts following parameters:
+ *  1. INTEGER_ARRAY bill
+ *  2. INTEGER k
+ *  3. INTEGER b
+ */
+
 func bonAppetit(bill []int32, k int32, b int32) {
 	// Write your code here
 	fmt.Println(k/2, b/2)

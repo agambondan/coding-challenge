@@ -2,10 +2,15 @@ package main
 
 import "fmt"
 
+/*
+ * Complete the 'dayOfProgrammer' function below.
+ *
+ * The function is expected to return a STRING.
+ * The function accepts INTEGER year as parameter.
+ */
+
 func dayOfProgrammer(year int32) string {
 	// Write your code here
-	//date := time.Date(int(year),0,0,0,0,0,0,time.UTC)
-	//date.
 	var date string
 	var programmerDay = 256
 	var monthOneToEight = []int{31, 31, 30, 31, 30, 31, 31}
@@ -37,31 +42,6 @@ func dayOfProgrammer(year int32) string {
 	}
 
 	return date
-
-	//var day string
-	//var leap = 0
-	//if year%4 == 0 {
-	//	leap = 1
-	//}
-	//if year > 1918 {
-	//	if year%100 == 0 {
-	//		leap = 0
-	//	}
-	//	if year%400 == 0 {
-	//		leap = 1
-	//	}
-	//}
-	//if year != 1918 {
-	//	if leap == 0 {
-	//		day = fmt.Sprintf("13.09.%d", year)
-	//	} else {
-	//		day = fmt.Sprintf("12.09.%d", year)
-	//	}
-	//} else {
-	//	day = fmt.Sprintf("26.09.%d", year)
-	//}
-	//
-	//return day
 }
 
 func main() {

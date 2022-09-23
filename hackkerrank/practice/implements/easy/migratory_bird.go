@@ -6,6 +6,13 @@ import (
 	"strconv"
 )
 
+/*
+ * Complete the 'migratoryBirds' function below.
+ *
+ * The function is expected to return an INTEGER.
+ * The function accepts INTEGER_ARRAY arr as parameter.
+ */
+
 func migratoryBirds(arr []int32) int32 {
 	var typeBird = make(map[string]int32)
 	// Write your code here
