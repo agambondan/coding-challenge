@@ -11,7 +11,11 @@ import "fmt"
 
 func aVeryBigSum(ar []int64) int64 {
 	// Write your code here
-	return 0
+	var result int64
+	for i := 0; i < len(ar); i++ {
+		result += ar[i]
+	}
+	return result
 }
 
 func main() {
