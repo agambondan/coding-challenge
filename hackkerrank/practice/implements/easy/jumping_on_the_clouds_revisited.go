@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // Complete the jumpingOnClouds function below.
-func jumpingOnClouds(c []int32, k int32) int32 {
+func jumpingOnCloudsRevisited(c []int32, k int32) int32 {
 	initLengthC := len(c)
 	var temp = c
 	if initLengthC%int(k) != 0 {
@@ -23,7 +23,7 @@ func jumpingOnClouds(c []int32, k int32) int32 {
 }
 
 func main() {
-	fmt.Println(jumpingOnClouds([]int32{0, 0, 1, 0, 0, 1, 1, 0}, 2))
-	fmt.Println(jumpingOnClouds([]int32{0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0}, 3))
-	fmt.Println(jumpingOnClouds([]int32{1, 1, 1, 0, 1, 1, 0, 0, 0, 0}, 3))
+	fmt.Println(jumpingOnCloudsRevisited([]int32{0, 0, 1, 0, 0, 1, 1, 0}, 2))
+	fmt.Println(jumpingOnCloudsRevisited([]int32{0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0}, 3))
+	fmt.Println(jumpingOnCloudsRevisited([]int32{1, 1, 1, 0, 1, 1, 0, 0, 0, 0}, 3))
 }

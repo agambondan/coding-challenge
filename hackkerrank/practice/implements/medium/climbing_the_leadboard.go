@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"sort"
-	"time"
 )
 
 func contains(s []int32, e int32) bool {
@@ -25,27 +24,12 @@ func add(slice []int32, s int, add int32) []int32 {
 
 func climbingLeaderboard(ranked []int32, player []int32) []int32 {
 	// Write your code here
-	start := time.Now()
-	//fmt.Println(start.String())
-
-	//keys := make(map[int]bool)
-	//var ranked []int
-	//for _, entry := range ranked {
-	//	e := int(entry)
-	//	if _, value := keys[e]; !value {
-	//		keys[e] = true
-	//		ranked = append(ranked, e)
-	//	}
-	//}
-	//sort.Ints(ranked)
 	for i := 0; i < len(ranked); i++ {
 		if contains(ranked[i+1:], ranked[i]) {
 			ranked = remove(ranked, i)
 			i--
 		}
 	}
-	elapsed := time.Since(start)
-	fmt.Printf("%s\n", elapsed)
 	sort.Slice(ranked, func(i, j int) bool { return ranked[i] < ranked[j] })
 	var result = make([]int32, len(player))
 	if len(ranked) == 1 {
@@ -75,9 +59,6 @@ func climbingLeaderboard(ranked []int32, player []int32) []int32 {
 					break
 				} else if p < ranked[j-1] {
 					temp = l32 + 1
-					//ranked = add(ranked, i, p)
-					//ranked = append(ranked, p)
-					//sort.Slice(ranked, func(i, j int) bool { return ranked[i] < ranked[j] })
 					break
 				}
 			}
@@ -85,8 +66,6 @@ func climbingLeaderboard(ranked []int32, player []int32) []int32 {
 			temp = 0
 		}
 	}
-	elapsed = time.Since(start)
-	fmt.Printf("%s\n", elapsed)
 	return result
 }
 
@@ -99,22 +78,3 @@ func main() {
 	var player1 = []int32{1, 1}
 	fmt.Println(climbingLeaderboard(ranked1, player1))
 }
-
-//fmt.Print(player[i], " ")
-//fmt.Println(i, " I ", j, " J ")
-//if int(player[i]) < ranked[j] {
-//fmt.Println(player[i], "CUK")
-//temp = int32(len(ranked) + 1)
-//ranked = append(ranked, int(player[i]))
-//sort.Ints(ranked)
-//break
-//} else if int(player[i]) > ranked[j] {
-//temp = int32(len(ranked) - j)
-//} else if int(player[i]) == ranked[j] {
-//temp = int32(j)
-//break
-//} else {
-//temp = int32(len(ranked) - j)
-//break
-//}
-//
