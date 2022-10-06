@@ -15,3 +15,19 @@ func MapKeyToArray[M ~map[K]V, K comparable, V any](m M) []K {
 	}
 	return r
 }
+
+//func MapToArrayValue(maps map[any]any) []any {
+//	r := make([]interface{}, len(maps))
+//	for _, val := range maps {
+//		r = append(r, val)
+//	}
+//	return r
+//}
+//
+//func MapToArrayKey(maps map[any]any) []any {
+//	r := make([]interface{}, len(maps))
+//	for key := range maps {
+//		r = append(r, key)
+//	}
+//	return r
+//}

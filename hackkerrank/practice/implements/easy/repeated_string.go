@@ -34,7 +34,7 @@ func repeatedString(s string, n int64) int64 {
 }
 
 func main() {
-	//fmt.Println(repeatedString("a", 1000000000000))
+	fmt.Println(repeatedString("a", 1000000000000))
 	fmt.Println(repeatedString("aba", 10))
 	fmt.Println(repeatedString("kmretasscityylpdhuwjirnqimlkcgxubxmsxpypgzxtenweirknjtasxtvxemtwxuarabssvqdnktqadhyktagjxoanknhgilnm", 736778906400))
 }
