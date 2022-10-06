@@ -47,21 +47,3 @@ func main() {
 	fmt.Println(nonDivisibleSubset(5, []int32{2, 7, 12, 17, 22}))
 	fmt.Println(nonDivisibleSubset(7, []int32{278, 576, 496, 727, 410, 124, 338, 149, 209, 702, 282, 718, 771, 575, 436}))
 }
-
-//func nonDivisibleSubset(k int32, s []int32) int32 {
-//	// Write your code here
-//	var key = make(map[int32]int32)
-//	for i := 0; i < len(s); i++ {
-//		for j := i + 1; j < len(s); j++ {
-//			if (s[i]+s[j])%k != 0 {
-//				//fmt.Print(s[i]+s[j], " | ")
-//				key[s[i]] = s[i] + s[j]
-//				//key[s[j]] = s[i] + s[j]
-//			} else if (s[i]+s[j])%k == 0 {
-//				//delete(key, s[i])
-//			}
-//		}
-//	}
-//	fmt.Println(key)
-//	return int32(len(key))
-//}
