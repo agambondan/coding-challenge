@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/agambondan/wedding-be/app/lib"
 	"gopkg.in/gomail.v2"
 	"log"
 	"text/template"
@@ -11,7 +10,7 @@ import (
 
 //func main() {
 //	//result := make(map[string]interface{})
-//	//response, err := lib.HttpRequest(nil, result).SetBody(`{"email": "asololejosbanget@gmail.com"}`).Post("https://wiza.co/bridge/verify_email")
+//	//response, err := HttpRequest(nil, result).SetBody(`{"email": "asololejosbanget@gmail.com"}`).Post("https://wiza.co/bridge/verify_email")
 //	//if err != nil {
 //	//	log.Println(err)
 //	//}
@@ -21,7 +20,7 @@ import (
 //	//i := strings.LastIndexByte(email, '@')
 //	//account := email[:i]
 //	//host := email[i+1:]
-//	//err := lib.ValidateHostAndUser(host, account, "agamgantengbanget@gmail.com")
+//	//err := ValidateHostAndUser(host, account, "agamgantengbanget@gmail.com")
 //	//if smtpErr, ok := err.(checkmail.SmtpError); ok && err != nil {
 //	//	fmt.Printf("\nCode: %s, Msg: %s\n", smtpErr.Code(), smtpErr)
 //	//}
@@ -79,15 +78,15 @@ func main() {
 	//	Name *string
 	//}
 	//menus := []Menu{
-	//	Menu{Name: lib.Strptr("Profile")},
-	//	Menu{Name: lib.Strptr("Dashboard")},
-	//	Menu{Name: lib.Strptr("Setting")},
+	//	Menu{Name: Strptr("Profile")},
+	//	Menu{Name: Strptr("Dashboard")},
+	//	Menu{Name: Strptr("Setting")},
 	//}
 	to := "agamgans89@gmail.com"
 	var activationCode = make(map[string]interface{})
 	activationCode["activation_code"] = "123456"
 	activationCode["email"] = to
-	activationCode["redirect_url"] = fmt.Sprintf("http://localhost:3000/client/activation?token=%s&activation_code=%s", lib.GeneratePassword(128, 30, 30, 30), activationCode["activation_code"])
+	activationCode["redirect_url"] = fmt.Sprintf("http://localhost:3000/client/activation?token=%s&activation_code=%s", GeneratePassword(128, 30, 30, 30), activationCode["activation_code"])
 	activationCode["url_home"] = fmt.Sprintf("")
 	// Activation Code
 	SendEmailVerification(to, "../app/pages/views/mail/activation_code.html", activationCode)
@@ -101,7 +100,7 @@ func SendEmail(to string, subject string, cc map[string]string, data interface{}
 		panic(err)
 	}
 	m := gomail.NewMessage()
-	m.SetHeader("From", lib.ConfigSenderName)
+	m.SetHeader("From", ConfigSenderName)
 	m.SetHeader("To", to)
 	for v, k := range cc {
 		m.SetAddressHeader("Cc", v, k)
@@ -109,8 +108,8 @@ func SendEmail(to string, subject string, cc map[string]string, data interface{}
 	m.SetHeader("Subject", subject)
 	m.SetBody("text/html", result)
 	// m.Attach(templateFile) // attach whatever you want
-	log.Println(lib.ConfigSmtpHost, lib.ConfigSmtpPort, lib.ConfigAuthEmail, lib.ConfigAuthPassword)
-	d := gomail.NewDialer(lib.ConfigSmtpHost, lib.ConfigSmtpPort, lib.ConfigAuthEmail, lib.ConfigAuthPassword)
+	log.Println(ConfigSmtpHost, ConfigSmtpPort, ConfigAuthEmail, ConfigAuthPassword)
+	d := gomail.NewDialer(ConfigSmtpHost, ConfigSmtpPort, ConfigAuthEmail, ConfigAuthPassword)
 	err = d.DialAndSend(m)
 	if err != nil {
 		return err

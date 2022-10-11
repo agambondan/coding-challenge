@@ -1,9 +1,5 @@
 package main
 
-github.com/agambondan/wedding-be/app/lib"
-"fmt"
-)
-
 func main() {
 	//url := "https://twelve-data1.p.rapidapi.com/ipo_calendar?country=IND"
 	//url = "https://ht2.ajaib.co.id/api/v1/stock/detail/AGRO/price/"
@@ -25,6 +21,6 @@ func main() {
 	//fmt.Println(req.Referer())
 	//rand.Seed(1)
 	//fmt.Println(rand.Int())
-	fmt.Println(lib.GeneratePassword(6, 0, 6, 0))
+	//fmt.Println(lib.GeneratePassword(6, 0, 6, 0))
 
 }
