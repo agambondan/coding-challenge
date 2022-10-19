@@ -22,7 +22,6 @@ func strangeCounter(t int64) int64 {
 		}
 		i += 1
 	}
-	fmt.Println(time, value, currentTime)
 	if currentTime+1 == t {
 		return value
 	}
