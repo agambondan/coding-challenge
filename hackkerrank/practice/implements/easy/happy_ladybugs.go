@@ -74,28 +74,4 @@ func main() {
 	for i := 0; i < len(T); i++ {
 		fmt.Println(happyLadybugs(T[i]))
 	}
-
 }
-
-//// happyLadybugs1
-//func happyLadybugs1(b string) string {
-//	if strings.Count(b, string(b[0])) < 1 && strings.Count(b, string(b[0])) == len(b) {
-//		return "YES"
-//	}
-//	for i := 0; i < strings.Count(b, "_"); i++ {
-//		temp = append(temp, "_")
-//	}
-//	for i := 0; i < len(b); i++ {
-//		if string(b[i]) != "_" && strings.Count(b, string(b[i])) < 2 {
-//			return "NO"
-//		}
-//	}
-//	if !strings.Contains(b, "_") {
-//		for i := 1; i < len(b); i += 2 {
-//			if string(b[i-1]) != string(b[i]) {
-//				return "NO"
-//			}
-//		}
-//	}
-//	return "YES"
-//}
