@@ -12,27 +12,21 @@ func getMoneySpent(keyboards []int32, drives []int32, b int32) int32 {
 	/*
 	 * Write your code here.
 	 */
-	var count = make([]int, len(keyboards)*len(drives))
-	var result, countIndex int32
-	for i := 0; i < len(keyboards); i++ {
-		for j := 0; j < len(drives); j++ {
-			total := keyboards[i] + drives[j]
-			if total <= b {
-				count[countIndex] = int(total)
-				countIndex += 1
-			}
-		}
-	}
-	sort.Ints(count)
-	for i := 1; i < len(count); i++ {
-		if count[i-1] <= int(b) && int(b) >= count[i] {
-			result = int32(count[i])
-		}
-	}
-	if result == 0 {
-		result = -1
-	}
-	return result
+	 var arr = make([]int, 0)
+    var total int
+    for i := 0; i < len(keyboards); i++ {
+        for j := 0; j < len(drives); j++ {
+            total = int(keyboards[i] + drives[j])
+            if int(b) >= total {
+                arr = append(arr, total)
+            }
+        }
+    }
+
+    sort.Ints(arr)
+    if(len(arr)==0){return -1}
+
+    return int32(arr[len(arr)-1])
 }
 
 func main() {
